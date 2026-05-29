@@ -1,0 +1,26 @@
+clothing_id,age,recommended,rating,review_date
+1002,73,True,Liked it,2021-11-25
+1009,26,False,Liked it,2021-03-08
+1007,50,True,Liked it,2021-09-30
+1000,61,False,Hated it,2021-06-08
+1013,32,True,Was okay,2021-12-24
+1010,33,True,Loved it,2021-12-31
+1004,31,True,Loved it,2021-08-20
+1000,29,False,Not great,2021-08-13
+1001,68,True,Not great,2021-10-12
+1011,30,True,Liked it,2021-08-20
+1002,30,False,Loved it,2021-10-26
+1007,25,True,Hated it,2021-03-19
+1013,25,False,Loved it,2021-11-09
+1013,62,True,Loved it,2021-07-30
+1004,34,False,Not great,2021-10-28
+1000,63,True,Was okay,2021-07-29
+1007,51,True,Was okay,2021-05-03
+1012,66,True,Hated it,2021-02-05
+1009,49,True,Not great,2021-07-30
+1001,61,True,Was okay,2022-01-28
+1009,64,False,Not great,2021-01-15
+1005,21,False,Loved it,2021-08-17
+1003,49,True,Loved it,2021-06-28
+1006,43,False,Was okay,2021-01-03
+1013,34,True,Was okay,2021-08-06
