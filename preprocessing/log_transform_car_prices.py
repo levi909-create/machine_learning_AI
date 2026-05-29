@@ -1,7 +1,6 @@
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-import codecademylib3_seaborn 
 
 ## add code below
 ## read in csv file

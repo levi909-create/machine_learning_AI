@@ -4,44 +4,53 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-A personal collection of standalone machine-learning practice scripts, mostly
-from Codecademy's ML course. Each file at the repo root is an independent,
-self-contained exercise — there is no application, package, build system, test
-suite, or dependency manifest. Files are named by topic (e.g. `pipeline_Ml`,
-`carDATA_ml`, `faces_PCA_images`) rather than by `.py` extension, but they are
-all Python 3.
+A personal collection of standalone machine-learning practice scripts (mostly
+from Codecademy's ML course). Each `.py` file is an independent, self-contained
+exercise focused on a single concept — there is no application, package, build
+system, or test suite. Scripts are organized into topic folders; see
+`README.md` for the full layout.
+
+## Directory layout
+
+- `regression/` — linear/Lasso regression, gradient descent from scratch, loss
+  functions, multiple linear regression
+- `classification/` — decision trees, KNN, SVM kernels and decision boundaries
+- `clustering/` — K-Means and pre-clustering visualization
+- `dimensionality_reduction/` — PCA
+- `preprocessing/` — centering, scaling, log transforms, categorical encoding
+- `pipelines/` — `Pipeline` + `ColumnTransformer` + `GridSearchCV` workflows
 
 ## Running scripts
 
-There is no entry point or test runner. Run an individual script directly:
+There is no entry point or test runner. Set up and run individual scripts:
 
 ```bash
-python <filename>          # e.g. python carDATA_ml
+pip install -r requirements.txt   # numpy, pandas, scikit-learn, matplotlib, seaborn
+python <dir>/<script>.py          # e.g. python regression/lasso_regression.py
 ```
-
-Dependencies are not declared anywhere. Scripts assume a scientific-Python
-environment with: `numpy`, `pandas`, `scikit-learn`, `matplotlib`, `seaborn`.
 
 ## Important: external dependencies that are NOT in this repo
 
 Many scripts will not run as-is in a fresh clone. Before assuming a script is
 broken, check which of these it needs:
 
-- **Codecademy-only modules** — `codecademylib3`, `codecademylib3_seaborn`,
-  `helpers`. These exist only inside Codecademy's learning environment and are
-  not pip-installable. The `import` lines can be removed safely; they only set
-  up display/styling and have no effect on the ML logic.
-- **Companion exercise modules** that ship with the original Codecademy lesson
-  but are absent here — e.g. `graph` (provides `points`, `labels`, `ax`,
-  `x_1`...), `gradient_descent_funcs` (provides `gradient_descent`). Scripts
-  importing these cannot run standalone without recreating those modules.
-- **Local CSV files** that are not committed — e.g. `reviews.csv`,
-  `student_math.csv`, `heights.csv`, `photo_id_times.csv`. Scripts reading these
-  via `pd.read_csv('...')` need the data file present in the working directory.
+- **Companion exercise modules** that shipped with the original Codecademy
+  lesson but are absent here — e.g. `graph` (provides `points`, `labels`, `ax`,
+  `x_1`...), `gradient_descent_funcs` (provides `gradient_descent`), `plot`
+  (provides `plot_clusters`). Scripts importing these cannot run standalone
+  without recreating those modules.
+- **Local CSV files** that are not committed (and are `.gitignore`d) — e.g.
+  `reviews.csv`, `student_math.csv`, `heights.csv`, `starbucks_customers.csv`,
+  `housing_data.csv`, `media_usage.csv`, `cars.csv`. Scripts reading these via
+  `pd.read_csv('...')` need the data file present in the working directory.
 - **Remote datasets** fetched over HTTP — several scripts pull from UCI
   (`archive.ics.uci.edu/.../car.data`, `.../abalone.data`) or via
   `sklearn.datasets` (`fetch_olivetti_faces`, `load_iris`, `make_regression`).
   These require network access at runtime.
+
+Note: the Codecademy-only display modules (`codecademylib3`,
+`codecademylib3_seaborn`) have been removed from all scripts; do not reintroduce
+them.
 
 ## Conventions observed across scripts
 
@@ -55,12 +64,9 @@ broken, check which of these it needs:
   `pd.get_dummies` / `OneHotEncoder` for categorical encoding, `StandardScaler`
   for scaling, and `GridSearchCV` with a `search_space` list of estimator dicts
   for model selection.
-- Topics covered: linear/lasso/ridge regression and gradient descent, decision
-  trees, SVM kernels and decision boundaries, KNN, PCA, and K-Means.
 
 ## Git workflow
 
 Commit messages are short and descriptive in the imperative/topic style of the
-existing history (e.g. "Add decision tree classifier implementation",
-"Implement Lasso regression model for student grades"). One script per commit is
-the established pattern.
+existing history (e.g. "Add decision tree classifier implementation"). Keep
+related changes scoped to a single concern per commit.

@@ -1,4 +1,3 @@
-import codecademylib3_seaborn
 from gradient_descent_funcs import gradient_descent
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
-import codecademylib3
 from plot import plot_clusters
 
 # Load the data

@@ -1,4 +1,3 @@
-import codecademylib3_seaborn
 from sklearn.svm import SVC
 from graph import points, labels
 from sklearn.model_selection import train_test_split

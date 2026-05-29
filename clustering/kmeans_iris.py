@@ -1,4 +1,3 @@
-import codecademylib3_seaborn
 import matplotlib.pyplot as plt
 import numpy as np 
 

@@ -1,6 +1,5 @@
 import numpy as np
 from sklearn import datasets
-import codecademylib3
 import matplotlib.pyplot as plt
 
 
