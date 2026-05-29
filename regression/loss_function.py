@@ -1,3 +1,5 @@
+"""Visualize the mean-squared-error loss surface for a two-feature linear model."""
+
 import numpy as np
 import matplotlib.pyplot as plt
 

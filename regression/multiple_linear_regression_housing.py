@@ -1,9 +1,15 @@
+"""Fit a multiple linear regression to predict rent from square footage and burglaries."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 # Load the data
-housing_data = pd.read_csv('housing_data.csv')
+housing_data = pd.read_csv(os.path.join(_DATA, "housing_data.csv"))
 X = housing_data[['Sq ft', 'Burglaries']]
 y = housing_data['Rent']
 

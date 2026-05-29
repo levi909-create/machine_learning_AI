@@ -1,3 +1,5 @@
+"""Train a decision tree on the UCI Car Evaluation dataset and report test accuracy."""
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt

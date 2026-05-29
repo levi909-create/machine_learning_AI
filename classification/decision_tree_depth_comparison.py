@@ -1,3 +1,5 @@
+"""Compare an unconstrained decision tree against a depth-limited one on car data."""
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt

@@ -1,3 +1,5 @@
+"""Compare a poor and a better linear decision boundary between two clusters."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 from graph import ax, x_1, y_1, x_2, y_2

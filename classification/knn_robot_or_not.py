@@ -1,9 +1,15 @@
+"""Classify whether a user is a robot from photo-identification time using k-nearest neighbors."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import numpy as np
 import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 
 # Load the data
-photo_id_times = pd.read_csv('photo_id_times.csv')
+photo_id_times = pd.read_csv(os.path.join(_DATA, "photo_id_times.csv"))
 
 # Separate the data into independent and dependent variables
 X = np.array(photo_id_times['Time to id photo']).reshape(-1, 1)

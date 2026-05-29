@@ -16,8 +16,9 @@ ENV/
 # Jupyter
 .ipynb_checkpoints/
 
-# Local data files (not committed; see README)
+# Local data files (not committed; see README) — sample data in data/ is kept
 *.csv
+!data/*.csv
 
 # OS / editor
 .DS_Store

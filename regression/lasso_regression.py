@@ -1,10 +1,15 @@
+"""Fit an L1-regularized (Lasso) regression on student grades and plot the coefficients."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import helpers
 
 
-df = pd.read_csv("./student_math.csv")
+df = pd.read_csv(os.path.join(_DATA, "student_math.csv"))
 y = df['Final_Grade']
 X = df.drop(columns = ['Final_Grade'])
 

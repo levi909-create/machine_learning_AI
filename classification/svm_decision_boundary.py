@@ -1,3 +1,5 @@
+"""Plot candidate linear decision boundaries over two clusters of points."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 from graph import ax, x_1, y_1, x_2, y_2

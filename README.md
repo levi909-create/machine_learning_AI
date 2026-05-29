@@ -39,20 +39,21 @@ python classification/decision_tree_car.py
 
 ## Data sources
 
-Scripts obtain their data in one of three ways:
+Every script runs out of the box. Scripts obtain their data in one of two ways:
 
-- **Remote datasets** — fetched at runtime from the
+- **Bundled sample data** — scripts that read a CSV load it from the
+  [`data/`](data/) directory (e.g. `student_math.csv`, `starbucks_customers.csv`,
+  `housing_data.csv`, `reviews.csv`). Small synthetic-but-realistic datasets are
+  committed so the scripts run without any setup. The path is resolved relative
+  to each script, so they work from any working directory.
+- **Remote datasets** — a handful of scripts fetch data at runtime from the
   [UCI Machine Learning Repository](https://archive.ics.uci.edu/) or via
-  `sklearn.datasets` (e.g. Iris, Olivetti faces). These require an internet
-  connection but no setup.
-- **Local CSV files** — a few scripts read a CSV from the working directory
-  (e.g. `student_math.csv`, `starbucks_customers.csv`, `housing_data.csv`,
-  `reviews.csv`). These data files are not included in the repository; place
-  the corresponding CSV in the directory before running.
-- **Companion modules** — a small number of exercises originally shipped with a
-  helper module (e.g. `graph`, `gradient_descent_funcs`, `plot`) that is not
-  included here. Those scripts illustrate the technique but need the helper
-  module to run end to end.
+  `sklearn.datasets` (e.g. the car evaluation, abalone, Iris, and Olivetti
+  faces datasets). These need an internet connection but no manual setup.
+
+Companion helper modules that the original exercises depended on
+(`graph`, `gradient_descent_funcs`, `plot_loss`, `plot`) are included alongside
+the scripts that import them.
 
 ## Topics
 

@@ -29,28 +29,33 @@ pip install -r requirements.txt   # numpy, pandas, scikit-learn, matplotlib, sea
 python <dir>/<script>.py          # e.g. python regression/lasso_regression.py
 ```
 
-## Important: external dependencies that are NOT in this repo
+## Data and dependencies
 
-Many scripts will not run as-is in a fresh clone. Before assuming a script is
-broken, check which of these it needs:
+All scripts run out of the box. Data is sourced two ways:
 
-- **Companion exercise modules** that shipped with the original Codecademy
-  lesson but are absent here — e.g. `graph` (provides `points`, `labels`, `ax`,
-  `x_1`...), `gradient_descent_funcs` (provides `gradient_descent`), `plot`
-  (provides `plot_clusters`). Scripts importing these cannot run standalone
-  without recreating those modules.
-- **Local CSV files** that are not committed (and are `.gitignore`d) — e.g.
-  `reviews.csv`, `student_math.csv`, `heights.csv`, `starbucks_customers.csv`,
-  `housing_data.csv`, `media_usage.csv`, `cars.csv`. Scripts reading these via
-  `pd.read_csv('...')` need the data file present in the working directory.
-- **Remote datasets** fetched over HTTP — several scripts pull from UCI
-  (`archive.ics.uci.edu/.../car.data`, `.../abalone.data`) or via
-  `sklearn.datasets` (`fetch_olivetti_faces`, `load_iris`, `make_regression`).
-  These require network access at runtime.
+- **Bundled CSVs in `data/`** — scripts that read a CSV resolve it relative to
+  their own location via `os.path.join(os.path.dirname(__file__), "..",
+  "data")`, so they work from any working directory. The committed CSVs are
+  small synthetic samples; `.gitignore` ignores `*.csv` everywhere *except*
+  `data/`, so a user's own data files stay untracked.
+- **Remote datasets** — `pipelines/abalone_*` and `classification/decision_tree_*`
+  fetch from UCI over HTTP; `dimensionality_reduction/pca_faces.py` calls
+  `fetch_olivetti_faces`; several use bundled `sklearn.datasets` (`load_iris`,
+  `make_regression`). The HTTP/`fetch_*` ones need network access at runtime.
 
-Note: the Codecademy-only display modules (`codecademylib3`,
-`codecademylib3_seaborn`) have been removed from all scripts; do not reintroduce
-them.
+**Companion helper modules live next to the scripts that import them** (and rely
+on the script's own directory being on `sys.path` when run directly):
+`classification/graph.py`, `regression/gradient_descent_funcs.py`,
+`regression/plot_loss.py`, `clustering/plot.py`. Keep helpers in the same folder
+as their consumer.
+
+Notes:
+- The Codecademy-only display modules (`codecademylib3`,
+  `codecademylib3_seaborn`) have been removed; do not reintroduce them.
+- Scripts target current library versions (numpy 2.x, pandas 3.x,
+  scikit-learn 1.8.x). Use `OneHotEncoder(sparse_output=...)` (not `sparse=`),
+  `float`/`np.float64` (not the removed `np.float`), and the modern
+  `fig.add_subplot(projection="3d")` 3-D API.
 
 ## Conventions observed across scripts
 

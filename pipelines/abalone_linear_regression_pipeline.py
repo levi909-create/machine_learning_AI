@@ -1,3 +1,5 @@
+"""Build a preprocessing + linear regression pipeline on the abalone dataset and compare scores."""
+
 import numpy as np
 import pandas as pd
 
@@ -24,7 +26,7 @@ for i in range(1000):
 
 x_train, x_test, y_train, y_test = train_test_split(X,y, random_state=0, test_size=0.25)
 
-cat_vals = Pipeline([("imputer",SimpleImputer(strategy='most_frequent')), ("ohe",OneHotEncoder(sparse=False, drop='first'))])
+cat_vals = Pipeline([("imputer",SimpleImputer(strategy='most_frequent')), ("ohe",OneHotEncoder(sparse_output=False, drop='first'))])
 
 num_vals = Pipeline([("imputer",SimpleImputer(strategy='mean')), ("scale",StandardScaler())])
 

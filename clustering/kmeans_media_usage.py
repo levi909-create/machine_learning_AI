@@ -1,10 +1,16 @@
+"""Cluster media-usage data into three groups with K-Means and plot the result."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
 from plot import plot_clusters
 
 # Load the data
-media_usage = pd.read_csv('media_usage.csv')
+media_usage = pd.read_csv(os.path.join(_DATA, "media_usage.csv"))
 
 # Create the model
 kmeans = KMeans(n_clusters=3)

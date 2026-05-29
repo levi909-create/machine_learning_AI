@@ -1,10 +1,16 @@
+"""Compare raw vs. log-transformed car selling prices with histograms."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
 
 ## add code below
 ## read in csv file
-cars = pd.read_csv('cars.csv')
+cars = pd.read_csv(os.path.join(_DATA, "cars.csv"))
 
 ## set you price variable
 prices = cars['sellingprice']

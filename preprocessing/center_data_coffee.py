@@ -1,8 +1,14 @@
+"""Center customer ages by subtracting the mean and plot the distribution."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 
-coffee = pd.read_csv('starbucks_customers.csv')
+coffee = pd.read_csv(os.path.join(_DATA, "starbucks_customers.csv"))
 
 
 ages = coffee['age']

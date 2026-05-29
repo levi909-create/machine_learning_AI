@@ -1,3 +1,5 @@
+"""Scatter Iris sepal length vs. petal length before clustering."""
+
 import matplotlib.pyplot as plt
 
 from sklearn import datasets

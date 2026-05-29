@@ -1,3 +1,5 @@
+"""Fit a line to monthly revenue using hand-written batch gradient descent and plot it."""
+
 import matplotlib.pyplot as plt
 
 def get_gradient_at_b(x, y, b, m):

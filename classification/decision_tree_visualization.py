@@ -1,3 +1,5 @@
+"""Train a shallow decision tree on car data and visualize it as both a plot and text."""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split

@@ -1,9 +1,15 @@
+"""Encode categorical review fields and standardize the numeric columns of a reviews dataset."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 #import data
-reviews = pd.read_csv('reviews.csv')
+reviews = pd.read_csv(os.path.join(_DATA, "reviews.csv"))
  
 #print column names
 print(reviews.columns)

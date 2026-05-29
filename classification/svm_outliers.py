@@ -1,3 +1,5 @@
+"""Show how outliers and the C parameter affect a linear SVM's margin."""
+
 import matplotlib.pyplot as plt
 from sklearn.svm import SVC
 from graph import points, labels, draw_points, draw_margin

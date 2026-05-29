@@ -1,3 +1,5 @@
+"""Compute a single gradient-descent step for a simple linear model on revenue data."""
+
 def get_gradient_at_b(x, y, b, m):
   N = len(x)
   diff = 0

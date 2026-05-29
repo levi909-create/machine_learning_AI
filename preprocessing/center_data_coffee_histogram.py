@@ -1,8 +1,14 @@
+"""Center customer ages and plot a styled histogram of distances from the mean."""
+
+import os
+
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data")
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 
-coffee = pd.read_csv('starbucks_customers.csv')
+coffee = pd.read_csv(os.path.join(_DATA, "starbucks_customers.csv"))
 
 ## add code below
 ## create ages variable

@@ -1,3 +1,5 @@
+"""Estimate insurance cost from a hand-tuned linear formula."""
+
 age = 28
 sex = 0  
 bmi = 26.2

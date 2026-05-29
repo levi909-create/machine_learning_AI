@@ -1,3 +1,5 @@
+"""Train an SVM with a polynomial kernel and report validation accuracy."""
+
 from sklearn.svm import SVC
 from graph import points, labels
 from sklearn.model_selection import train_test_split
